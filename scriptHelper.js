@@ -51,7 +51,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
   }
   if (emptyAlert === true) {
-    window.alert("All fields are required!");
+    alert("All fields are required!");
     //validate correct input types
   } else if (
     validateInput(pilot.value) === "Is a Number" ||
@@ -59,7 +59,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(fuelLevel.value) === "Not a Number" ||
     validateInput(cargoLevel.value) === "Not a Number"
   ) {
-    window.alert("Make sure to enter valid information for each field!");
+    alert("Make sure to enter valid information for each field!");
   }
   //check fuelLevel
   if (fuelLevel.value < 10000 && fuelLevel.value !== '') {
