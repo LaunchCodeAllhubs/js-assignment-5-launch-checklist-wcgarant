@@ -62,7 +62,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     alert("Make sure to enter valid information for each field!");
   }
   //check fuelLevel
-  if (fuelLevel.value < 10000) {
+  if (fuelLevel.value < 10000 && fuelLevel.value !== '') {
     list.style.visibility = "visible";
     fuelStatusMsg = "Fuel level too low for launch";
     launchStatus.innerHTML = "Shuttle Not Ready for Launch";
