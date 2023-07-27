@@ -36,6 +36,7 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //declarations
+    console.log("formSubmission");
     let submits = [pilot, copilot, fuelLevel, cargoLevel];
     let emptyAlert = false;
     let fuelStatusMsg = 'Fuel level high enough for launch';
@@ -51,7 +52,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         }
     }
     if (emptyAlert === true) {
-        alert("All fields are required!");
+        // alert("All fields are required!");
         //validate correct input types
     } else if (
         validateInput(pilot) === "Is a Number" ||
@@ -59,7 +60,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         validateInput(fuelLevel) === "Not a Number" ||
         validateInput(cargoLevel) === "Not a Number"
     ) {
-        alert("Make sure to enter valid information for each field!");
+        // alert("Make sure to enter valid information for each field!");
     }
     //check fuelLevel
     if (fuelLevel.value < 10000) {
@@ -95,7 +96,9 @@ async function myFetch() {
     return planetsReturned;
 }
 
-function pickPlanet(planets) { }
+function pickPlanet(planets) {
+    return planets[Math.floor(Math.random()*planets.length)];
+ }
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;

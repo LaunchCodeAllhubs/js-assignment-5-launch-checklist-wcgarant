@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
 
     let button = document.getElementById("formSubmit");
     button.addEventListener("click", function(event) {
-
+console.log("click button")
         let pilot = document.querySelector("input[name=pilotName]");
         let copilot = document.querySelector("input[name=copilotName]");
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
@@ -26,5 +26,5 @@ window.addEventListener("load", function() {
 //        console.log(listedPlanets);
 //        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 //    })
-   
+   pickPlanet("hellopi");
 });
