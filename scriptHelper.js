@@ -25,9 +25,9 @@ function addDestinationInfo(
 }
 
 function validateInput(testInput) {
-  if (testInput.value === "") {
+  if (testInput === "") {
     return "Empty";
-  } else if (isNaN(testInput.value)) {
+  } else if (isNaN(testInput)) {
     return "Not a Number";
   } else {
     return "Is a Number";
@@ -46,7 +46,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   launchStatus.style.color = "#419F6A";
   //loop through submissions to alert empty form submit
   for (i = 0; i < submits.length; i++) {
-    if (validateInput(submits[i]) === "Empty") {
+    if (validateInput(submits[i].value) === "Empty") {
       emptyAlert = true;
     }
   }
@@ -54,10 +54,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     alert("All fields are required!");
     //validate correct input types
   } else if (
-    validateInput(pilot) === "Is a Number" ||
-    validateInput(copilot) === "Is a Number" ||
-    validateInput(fuelLevel) === "Not a Number" ||
-    validateInput(cargoLevel) === "Not a Number"
+    validateInput(pilot.value) === "Is a Number" ||
+    validateInput(copilot.value) === "Is a Number" ||
+    validateInput(fuelLevel.value) === "Not a Number" ||
+    validateInput(cargoLevel.value) === "Not a Number"
   ) {
     alert("Make sure to enter valid information for each field!");
   }
