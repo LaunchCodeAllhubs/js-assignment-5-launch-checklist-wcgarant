@@ -41,9 +41,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let fuelStatusMsg = "Fuel level high enough for launch";
   let cargoStatusMsg = "Cargo mass low enough for launch";
   let launchStatus = document.getElementById("launchStatus");
-
-  // launchStatus.innerHTML = "Shuttle is Ready for Launch";
-  // launchStatus.style.color = "#419F6A";
+  list.style.visibility = "hidden";
   //loop through submissions to alert empty form submit
   for (i = 0; i < submits.length; i++) {
     if (validateInput(submits[i].value) === "Empty") {
